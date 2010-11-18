@@ -21,7 +21,8 @@
     // Override point for customization after application launch.
     
     [window makeKeyAndVisible];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:NO];
+    //NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html" inDirectory:NO];
+	NSString *path = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"/www/index.html"];
 	[webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
     return YES;
 }
